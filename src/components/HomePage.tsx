@@ -23,9 +23,14 @@ const HomePage = () => {
 
 
   const getMovies = async (url: string) => {
-    const response = await axios.get<Response>(url);
-    const result = response.data.results;
-    setMovies(result);
+    try {
+      const response = await axios.get<Response>(url);
+      const result = response.data.results;
+      setMovies(result);
+    } catch (e) {
+      console.log("error", e)
+    }
+
   }
 
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
