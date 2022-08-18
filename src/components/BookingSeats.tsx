@@ -35,26 +35,25 @@ const BookingSeats = () => {
 
   const modalHandle = () => {
     setModalVisible(true);
-    setBgClick(false);
-    if (selectedSeats.length === 0) {
-      setModalVisible(false);
-      alert(" Please select seats first");
-      setBgClick(true);
-      return;
-    } else if (selectedSeats.length > 10) {
-      setModalVisible(false);
-      alert(`you can't select more than 10 seats.. 
+    switch (true) {
+      case selectedSeats.length === 0:
+        setModalVisible(false)
+        alert(" Please select seats first");
+        break;
+
+      case selectedSeats.length > 10:
+        setModalVisible(false);
+        alert(`you can't select more than 10 seats.. 
       you have selected ${selectedSeats.length} seats.
       Please deselect ${selectedSeats.length - 10} seats`);
-      setBgClick(true);
-      return;
-    } else {
-      localStorage.setItem(
-        JSON.stringify(param.id),
-        bookedSeat + selectedSeats.toString()
-      );
-      setBookedSeat(localStorage.getItem(JSON.stringify(param.id)));
-      setModalVisible(true);
+        break;
+      default:
+        localStorage.setItem(
+          JSON.stringify(param.id),
+          bookedSeat + selectedSeats.toString()
+        );
+        setBookedSeat(localStorage.getItem(JSON.stringify(param.id)));
+        setModalVisible(true);
     }
   };
 
@@ -74,11 +73,6 @@ const BookingSeats = () => {
   return (
     <BookingStyles style={bgClick ? bgColor : bgDisplay}>
       <VectorImg src={vector} alt="screen" />
-      {/* <MovieSeats
-        selectedSeats={selectedSeats}
-        bookedSeat={bookedSeat}
-        setSelectedSeats={setSelectedSeats}
-      /> */}
       <BookingTableSeats>
         <thead>
           <tr>
