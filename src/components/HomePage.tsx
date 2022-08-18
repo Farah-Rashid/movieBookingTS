@@ -18,15 +18,12 @@ type MovieInfo = {
   id: number;
 };
 
-function HomePage() {
+const HomePage = () => {
   const [movies, setMovies] = useState<MovieInfo[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  useEffect(() => {
-    getMovies(apiUrl);
-  }, []);
 
-  async function getMovies(url: string) {
+  const getMovies = async (url: string) => {
     const response = await axios.get<Response>(url);
     const result = response.data.results;
     setMovies(result);
@@ -40,6 +37,9 @@ function HomePage() {
       getMovies(apiUrl);
     }
   };
+  useEffect(() => {
+    getMovies(apiUrl);
+  }, []);
 
   return (
     <>
