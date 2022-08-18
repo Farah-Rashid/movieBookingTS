@@ -37,7 +37,7 @@ const bgColor = {
 const BookingSeats = () => {
   const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
   const [modalVisible, setModalVisible] = useState<boolean>(false);
-  const [selected, setSelected] = useState<string | null>("");
+  const [bookedSeat, setBookedSeat] = useState<string | null>("");
   const [bgClick, setBgClick] = useState<boolean>(true);
 
   const location = useLocation().state as UserProp;
@@ -68,16 +68,16 @@ const BookingSeats = () => {
     } else {
       localStorage.setItem(
         JSON.stringify(location.movieId),
-        selected + selectedSeats.toString()
+        bookedSeat + selectedSeats.toString()
       );
-      setSelected(localStorage.getItem(JSON.stringify(location.movieId)));
-      console.log("selected", selected);
+      setBookedSeat(localStorage.getItem(JSON.stringify(location.movieId)));
+      console.log("selected", bookedSeat);
       setModalVisible(true);
     }
   };
   useEffect(() => {
     if (localStorage.getItem(JSON.stringify(location.movieId)) !== null) {
-      setSelected(localStorage.getItem(JSON.stringify(location.movieId)));
+      setBookedSeat(localStorage.getItem(JSON.stringify(location.movieId)));
     }
   }, [location.movieId]);
   return (
@@ -112,14 +112,22 @@ const BookingSeats = () => {
                           key={id + index}
                           onClick={() => handleSeats(id + (index + 1))}
                         >
-                          {selected !== null &&
-                            selected.includes(id + (index + 1)) ? (
-                            <img src={blackSeat} alt="black" />
-                          ) : selectedSeats.includes(id + (index + 1)) ? (
-                            <img src={seatBlue} alt="blue" />
-                          ) : (
-                            <img src={seatWhite} alt="white" />
-                          )}
+
+                          {(() => {
+                            switch (true) {
+                              case bookedSeat !== null &&
+                                bookedSeat.includes(id + (index + 1)):
+                                return <img src={blackSeat} alt="black" />
+                              case selectedSeats.includes(id + (index + 1)):
+                                return (
+                                  <img src={seatBlue} alt="blue" />
+                                );
+                              default:
+                                return (
+                                  <img src={seatWhite} alt="white" />
+                                );
+                            }
+                          })()}
                         </td>
                       </React.Fragment>
                     );
