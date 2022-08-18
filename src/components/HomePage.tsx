@@ -2,12 +2,11 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
-import img from "../Assets/undraw.png";
 import GlobalStyles from "../styles/GlobalStyles";
 import { Container } from "../styles/Container.styled";
-import { Empty } from "../styles/Empty.styles";
 import { Cards } from "../styles/Cards.styled";
 import { searchUrl, apiUrl } from '../GlobalConstants'
+import PageNotFound from "./PageNotFound";
 
 type Response = {
   results: MovieInfo[];
@@ -63,10 +62,7 @@ function HomePage() {
           <MovieCard movies={movies} />
         </Cards>
       ) : (
-        <Empty>
-          <h2>Sorry, there is no result for keyword you searched.</h2>
-          <img src={img} alt="no img found" />
-        </Empty>
+        <PageNotFound />
       )}
     </>
   );
