@@ -41,8 +41,6 @@ const BookingSeats = () => {
   const [bgClick, setBgClick] = useState<boolean>(true);
 
   const location = useLocation().state as UserProp;
-  // console.log(state)
-
   function handleSeats(id: string) {
     if (selectedSeats.includes(id)) {
       const updatedSeats = selectedSeats.filter((seatId) => seatId !== id);
@@ -107,7 +105,7 @@ const BookingSeats = () => {
               <React.Fragment key={id}>
                 <tr>
                   <SeatRow>{id}</SeatRow>
-                  {data.seats.map((seat, index) => {
+                  {data.seats.map((_, index) => {
                     return (
                       <React.Fragment key={index}>
                         <td
@@ -136,7 +134,7 @@ const BookingSeats = () => {
       <article
         style={bgClick ? { pointerEvents: "none" } : { pointerEvents: "auto" }}
       >
-        {modalVisible ? (
+        {modalVisible && (
           <Modal
             movie={location.movie}
             selectedSeats={selectedSeats}
@@ -144,8 +142,6 @@ const BookingSeats = () => {
             setModalVisible={setModalVisible}
             setBgClick={setBgClick}
           />
-        ) : (
-          ""
         )}
       </article>
     </BookingStyles>
