@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
-import GlobalStyles from "../styles/GlobalStyles";
 import { Container } from "../styles/Container.styled";
 import { Cards } from "../styles/Cards.styled";
 import { searchUrl, apiUrl } from '../GlobalConstants'
@@ -43,7 +42,6 @@ const HomePage = () => {
 
   return (
     <>
-      <GlobalStyles />
       <Container>
         {" "}
         <h1>Book Tickets</h1>
