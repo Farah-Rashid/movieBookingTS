@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router';
 import close from "../Assets/Xclose.png"
+import { imgUrl } from '../GlobalConstants'
 import {
   ModalStyle,
   CloseButton,
@@ -31,7 +32,6 @@ const Modal = ({ selectedSeats, setModalVisible, setSelectedSeats, setBgClick }:
   };
   const param = useParams();
   const imgPath = localStorage.getItem(param.title || '{}')
-  const imgUrl = "https://image.tmdb.org/t/p/w500/";
   return (
     <ModalStyle>
       <CloseButton onClick={modalClose} src={close} alt="close" />

@@ -7,11 +7,7 @@ import GlobalStyles from "../styles/GlobalStyles";
 import { Container } from "../styles/Container.styled";
 import { Empty } from "../styles/Empty.styles";
 import { Cards } from "../styles/Cards.styled";
-
-const key = "api_key=06431b5693dfdfb9f2a94311f7d8cbf0";
-const baseUrl = "https://api.themoviedb.org/3";
-const apiUrl = `${baseUrl}/discover/movie?sort_by=popularity.desc&${key}`;
-const searchUrl = `${baseUrl}/search/movie?${key}`;
+import { searchUrl, apiUrl } from '../GlobalConstants'
 
 type Response = {
   results: MovieInfo[];
@@ -34,7 +30,6 @@ function HomePage() {
   async function getMovies(url: string) {
     const response = await axios.get<Response>(url);
     const result = response.data.results;
-    console.log(result);
     setMovies(result);
   }
 

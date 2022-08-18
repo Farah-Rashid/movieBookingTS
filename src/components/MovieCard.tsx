@@ -1,9 +1,8 @@
 import React from "react";
 import { Card, CardDiv } from "../styles/MovieCard.styled"
 import { NavLink } from 'react-router-dom'
+import { imgUrl, placeholderImg } from '../GlobalConstants'
 
-const imgUrl = "https://image.tmdb.org/t/p/w500";
-const placeholderImg = "http://via.placeholder.com/1080x1580";
 
 type Props = {
   movies: movie[];
