@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-
+import SeatIcon from '../Assets/SeatIcon';
 import vector from "../Assets/Vector 1.png";
 import seatWhite from "../Assets/SeatWhite.svg";
 import seatBlue from "../Assets/SeatBlue.svg";
 import blackSeat from "../Assets/SeatBlack.svg";
-import { useLocation, useParams } from "react-router";
+import { useParams } from "react-router";
 import Modal from "./Modal";
 import {
   BookingStyles,
@@ -110,21 +110,26 @@ const BookingSeats = () => {
                       <React.Fragment key={index}>
                         <td
                           key={id + index}
-                          onClick={() => handleSeats(id + (index + 1))}
                         >
 
                           {(() => {
                             switch (true) {
                               case bookedSeat !== null &&
                                 bookedSeat.includes(id + (index + 1)):
-                                return <img src={blackSeat} alt="black" />
+                                return <SeatIcon colorName="#626262" />
                               case selectedSeats.includes(id + (index + 1)):
                                 return (
-                                  <img src={seatBlue} alt="blue" />
+                                  <SeatIcon
+                                    colorName="#724FD8"
+                                    onClick={() => handleSeats(id + (index + 1))}
+                                  />
                                 );
                               default:
                                 return (
-                                  <img src={seatWhite} alt="white" />
+                                  <SeatIcon
+                                    colorName="#DADADA"
+                                    onClick={() => handleSeats(id + (index + 1))}
+                                  />
                                 );
                             }
                           })()}
