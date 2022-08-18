@@ -4,7 +4,7 @@ import vector from "../Assets/Vector 1.png";
 import seatWhite from "../Assets/SeatWhite.svg";
 import seatBlue from "../Assets/SeatBlue.svg";
 import blackSeat from "../Assets/SeatBlack.svg";
-import { useLocation } from "react-router";
+import { useLocation, useParams } from "react-router";
 import Modal from "./Modal";
 import {
   BookingStyles,
@@ -40,7 +40,7 @@ const BookingSeats = () => {
   const [bookedSeat, setBookedSeat] = useState<string | null>("");
   const [bgClick, setBgClick] = useState<boolean>(true);
 
-  const location = useLocation().state as UserProp;
+  const param = useParams();
   function handleSeats(id: string) {
     if (selectedSeats.includes(id)) {
       const updatedSeats = selectedSeats.filter((seatId) => seatId !== id);
@@ -67,19 +67,19 @@ const BookingSeats = () => {
       return;
     } else {
       localStorage.setItem(
-        JSON.stringify(location.movieId),
+        JSON.stringify(param.id),
         bookedSeat + selectedSeats.toString()
       );
-      setBookedSeat(localStorage.getItem(JSON.stringify(location.movieId)));
+      setBookedSeat(localStorage.getItem(JSON.stringify(param.id)));
       console.log("selected", bookedSeat);
       setModalVisible(true);
     }
   };
   useEffect(() => {
-    if (localStorage.getItem(JSON.stringify(location.movieId)) !== null) {
-      setBookedSeat(localStorage.getItem(JSON.stringify(location.movieId)));
+    if (localStorage.getItem(JSON.stringify(param.id)) !== null) {
+      setBookedSeat(localStorage.getItem(JSON.stringify(param.id)));
     }
-  }, [location.movieId]);
+  }, [param.id]);
   return (
     <BookingStyles style={bgClick ? bgColor : bgDisplay}>
       <VectorImg src={vector} alt="screen" />
@@ -144,7 +144,6 @@ const BookingSeats = () => {
       >
         {modalVisible && (
           <Modal
-            movie={location.movie}
             selectedSeats={selectedSeats}
             setSelectedSeats={setSelectedSeats}
             setModalVisible={setModalVisible}
