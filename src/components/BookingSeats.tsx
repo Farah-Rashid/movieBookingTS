@@ -5,11 +5,11 @@ import Modal from "./Modal";
 import { data } from '../GlobalConstants'
 import {
   BookingStyles,
-  ConfirmButton,
   VectorImg,
   SeatRow,
   BookingTableSeats
 } from "../styles/Booking.styled";
+import Button from '../components/Button/Button'
 import SeatIcon from "../Assets/SeatIcon"
 type UserProp = {
   movieId: number;
@@ -129,7 +129,7 @@ const BookingSeats = () => {
           })}
         </tbody>
       </BookingTableSeats>
-      <ConfirmButton onClick={modalHandle}>Confirm Booking</ConfirmButton>
+      <Button onClick={modalHandle}>Confirm Booking</Button>
       <article
         style={bgClick ? { pointerEvents: "none" } : { pointerEvents: "auto" }}
       >

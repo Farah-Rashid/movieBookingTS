@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardDiv } from "../styles/MovieCard.styled"
 import { NavLink } from 'react-router-dom'
 import { imgUrl, placeholderImg } from '../GlobalConstants'
-
+import Button from '../components/Button/Button';
 
 type Props = {
   movies: movie[];
@@ -25,7 +25,7 @@ const MovieCard = (props: Props) => {
             <h3>{item.title}</h3>
             {item.poster_path ? <img src={imgUrl + item.poster_path} alt={item.title} /> : <img src={placeholderImg} alt="fakeImg" />}
             <NavLink to={`/book/${item.id}/${item.title}`}>
-              <button onClick={() => ImagePath(item.title, item.poster_path)}>Book now</button>
+              <Button onClick={() => ImagePath(item.title, item.poster_path)}>Book now</Button>
             </NavLink>
           </Card>
         );

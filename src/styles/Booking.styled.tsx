@@ -1,26 +1,24 @@
 import styled from "styled-components";
-
+import { ButtonStyle } from '../components/Button.styled'
 export const BookingStyles = styled.article`
 display:flex;
 flex-direction:column;
 align-items:center;
 position:relative;
+${ButtonStyle} {
+    top: 245px;
+    left: 89px;
+    right: 87px;
+    bottom: 37px;
+    margin: 109px 0 152px 0;
+    width: 190px;
+  }
   `
 export const VectorImg = styled.img`
   height:129px;
   width:1082px;
   margin: 46px auto 0px auto;
 
-`
-export const ConfirmButton = styled.button`
-background: #352C9A;
-padding: 12px 30px;
-color:#ffffff;
-font-family: 'Rubik';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-margin: 109px 0 152px 0;
 `
 export const BookingTableSeats = styled.table`
 
@@ -41,8 +39,6 @@ font-weight: 400;
 font-size: 48px;
 padding-right:59px;
 `
-
-// modal designs
 
 export const ModalStyle = styled.article`
 position: absolute;
