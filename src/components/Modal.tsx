@@ -14,6 +14,7 @@ import {
   ModalDiv,
   ModalDivSeat,
   ModalSeatH1,
+  ModalSeatH3,
 } from "../styles/Booking.styled";
 
 type Props = {
@@ -40,7 +41,7 @@ const Modal = ({ selectedSeats, setModalVisible, setSelectedSeats, setBgClick }:
       < ModalDiv>
         <MoviePic src={imgUrl + imgPath} alt="movie" />
         <article>
-          <h3>Seats:</h3>
+          <ModalSeatH3>Seats:</ModalSeatH3>
           <ModalDivSeat>
             <ModalSeatH1>{selectedSeats.toString()}</ModalSeatH1></ModalDivSeat>
           <DataFlex>

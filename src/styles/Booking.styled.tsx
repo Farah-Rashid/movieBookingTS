@@ -12,7 +12,7 @@ export const VectorImg = styled.img`
   margin: 46px auto 0px auto;
 
 `
-export const ConfirmButton= styled.button`
+export const ConfirmButton = styled.button`
 background: #352C9A;
 padding: 12px 30px;
 color:#ffffff;
@@ -22,7 +22,7 @@ font-weight: 500;
 font-size: 16px;
 margin: 109px 0 152px 0;
 `
-export const BookingTableSeats= styled.table`
+export const BookingTableSeats = styled.table`
 
 margin:75px auto 0 auto;
 
@@ -111,7 +111,6 @@ export const ModalDiv = styled.article`
 display: flex;
 justify-content: space-around;
 margin-top: 48px;
-
 `
 export const ModalDivSeat = styled.article`
 display:flex;
@@ -120,5 +119,10 @@ width:202px;
 overflow:hidden;
 text-overflow:ellipsis;
 white-space:nowrap;
-
 `
+export const ModalSeatH3 = styled.h3`
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+`;
