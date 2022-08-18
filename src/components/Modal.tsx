@@ -38,17 +38,11 @@ const Modal = ({ selectedSeats, setModalVisible, setSelectedSeats, setBgClick }:
       <ModalH1>Thank you for booking</ModalH1>
       <ModalH3>Order Summary</ModalH3>
       < ModalDiv>
-
         <MoviePic src={imgUrl + imgPath} alt="movie" />
-
         <article>
           <h3>Seats:</h3>
           <ModalDivSeat>
-            {selectedSeats.map((seat, index) => {
-              return <ModalSeatH1 key={index}>{seat},</ModalSeatH1>;
-            })}
-
-          </ModalDivSeat>
+            <ModalSeatH1>{selectedSeats.toString()}</ModalSeatH1></ModalDivSeat>
           <DataFlex>
             <article>
               <ModalH5>{selectedSeats.length}*250</ModalH5>
