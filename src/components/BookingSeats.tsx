@@ -11,11 +11,6 @@ import {
 } from "../styles/Booking.styled";
 import Button from '../components/Button/Button'
 import SeatIcon from "../Assets/SeatIcon"
-type UserProp = {
-  movieId: number;
-  movie: string;
-};
-
 
 const bgDisplay = {
   pointerEvents: "none",
