@@ -65,6 +65,7 @@ button{
     font-weight: 500;
     z-index:2;
     opacity:0;
+    border-style: none;
 }
 button:hover {
     background-color: #724fd8;
