@@ -12,35 +12,23 @@ import {
 import Button from '../components/Button/Button'
 import SeatIcon from "../Assets/SeatIcon"
 
-const bgDisplay = {
-  pointerEvents: "none",
-  backgroundColor: " rgba(229, 229, 229, 0.6)",
-};
-const bgColor = {
-  backgroundColor: "white",
-};
-
 const BookingSeats = () => {
   const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [bookedSeat, setBookedSeat] = useState<string | null>("");
-  const [bgClick, setBgClick] = useState<boolean>(true);
 
   const param = useParams();
 
   const modalHandle = () => {
     setModalVisible(true);
-    setBgClick(false);
     switch (true) {
       case selectedSeats.length === 0:
         setModalVisible(false);
-        setBgClick(true);
         alert(" Please select seats first");
         break;
 
       case selectedSeats.length > 10:
         setModalVisible(false);
-        setBgClick(true);
         alert(`you can't select more than 10 seats.. 
       you have selected ${selectedSeats.length} seats.
       Please deselect ${selectedSeats.length - 10} seats`);
@@ -69,7 +57,7 @@ const BookingSeats = () => {
     }
   }, [param.id]);
   return (
-    <BookingStyles style={bgClick ? bgColor : bgDisplay}>
+    <BookingStyles>
       <VectorImg src={vector} alt="screen" />
       <BookingTableSeats>
         <thead>
@@ -125,18 +113,15 @@ const BookingSeats = () => {
         </tbody>
       </BookingTableSeats>
       <Button onClick={modalHandle}>Confirm Booking</Button>
-      <article
-        style={bgClick ? { pointerEvents: "none" } : { pointerEvents: "auto" }}
-      >
-        {modalVisible && (
-          <Modal
-            selectedSeats={selectedSeats}
-            setSelectedSeats={setSelectedSeats}
-            setModalVisible={setModalVisible}
-            setBgClick={setBgClick}
-          />
-        )}
-      </article>
+
+      {modalVisible && (
+        <Modal
+          selectedSeats={selectedSeats}
+          setSelectedSeats={setSelectedSeats}
+          setModalVisible={setModalVisible}
+        />
+      )}
+
     </BookingStyles>
   );
 };

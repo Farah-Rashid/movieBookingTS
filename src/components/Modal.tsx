@@ -19,18 +19,15 @@ import {
 } from "../styles/Booking.styled";
 
 type Props = {
-
   selectedSeats: string[];
   setSelectedSeats: (arr: string[]) => void;
   setModalVisible: (arr: boolean) => void;
-  setBgClick: (arr: boolean) => void;
 }
 
-const Modal = ({ selectedSeats, setModalVisible, setSelectedSeats, setBgClick }: Props) => {
+const Modal = ({ selectedSeats, setModalVisible, setSelectedSeats }: Props) => {
   const modalClose = () => {
     setModalVisible(false);
     setSelectedSeats([]);
-    setBgClick(true);
   };
   const param = useParams();
   const imgPath = localStorage.getItem(param.title || '{}')
