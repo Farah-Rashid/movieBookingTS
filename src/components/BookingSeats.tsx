@@ -35,14 +35,17 @@ const BookingSeats = () => {
 
   const modalHandle = () => {
     setModalVisible(true);
+    setBgClick(false);
     switch (true) {
       case selectedSeats.length === 0:
-        setModalVisible(false)
+        setModalVisible(false);
+        setBgClick(true);
         alert(" Please select seats first");
         break;
 
       case selectedSeats.length > 10:
         setModalVisible(false);
+        setBgClick(true);
         alert(`you can't select more than 10 seats.. 
       you have selected ${selectedSeats.length} seats.
       Please deselect ${selectedSeats.length - 10} seats`);

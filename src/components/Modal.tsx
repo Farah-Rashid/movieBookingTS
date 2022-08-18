@@ -57,7 +57,7 @@ const Modal = ({ selectedSeats, setModalVisible, setSelectedSeats, setBgClick }:
               <br />
               <ModalSmall>SGST(12%)</ModalSmall>
             </article>
-            <article style={{ textAlign: "right" }}>
+            <article >
               <ModalH5>{selectedSeats.length * 250}</ModalH5>
               <br />
               <ModalSmall>{12 * (1 / 100) * (selectedSeats.length * 250)}</ModalSmall>
