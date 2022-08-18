@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+
 import vector from "../Assets/Vector 1.png";
 import seatWhite from "../Assets/SeatWhite.svg";
 import seatBlue from "../Assets/SeatBlue.svg";
@@ -54,7 +54,7 @@ const BookingSeats = () => {
 
   const modalHandle = () => {
     setModalVisible(true);
-     setBgClick(false);
+    setBgClick(false);
     if (selectedSeats.length === 0) {
       setModalVisible(false);
       alert(" Please select seats first");
@@ -115,7 +115,7 @@ const BookingSeats = () => {
                           onClick={() => handleSeats(id + (index + 1))}
                         >
                           {selected !== null &&
-                          selected.includes(id + (index + 1)) ? (
+                            selected.includes(id + (index + 1)) ? (
                             <img src={blackSeat} alt="black" />
                           ) : selectedSeats.includes(id + (index + 1)) ? (
                             <img src={seatBlue} alt="blue" />
@@ -142,7 +142,7 @@ const BookingSeats = () => {
             selectedSeats={selectedSeats}
             setSelectedSeats={setSelectedSeats}
             setModalVisible={setModalVisible}
-            setBgClick ={setBgClick}
+            setBgClick={setBgClick}
           />
         ) : (
           ""
