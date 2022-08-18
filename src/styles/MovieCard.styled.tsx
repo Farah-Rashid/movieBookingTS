@@ -34,8 +34,7 @@ h3{
     font-size: 24px;
     font-weight: 600;
     color: #ffffff;
-
-    text-align:center;
+   text-align:center;
    z-index: 2;
    opacity:0;
   width: 111px;
@@ -50,11 +49,7 @@ img{
     width: 350px;
     border-radius: 20px;
     box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.25);
- 
-}
-
-
-
+ }
 button{
     position: absolute;
     left: 29.43%;
@@ -68,7 +63,6 @@ button{
     font-family: "Rubik";
     font-size: 16px;
     font-weight: 500;
-
     z-index:2;
     opacity:0;
 }
@@ -100,7 +94,7 @@ img {
         border-radius: 0px;
 
     }
-
+}
 
 @media(max-width:768px){
     margin: 24px auto 24px auto;
