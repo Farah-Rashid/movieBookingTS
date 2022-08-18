@@ -60,7 +60,7 @@ const BookingSeats = () => {
     }
   };
 
-  function handleSeats(id: string) {
+  const handleSeats = (id: string) => {
     if (selectedSeats.includes(id)) {
       const updatedSeats = selectedSeats.filter((seatId) => seatId !== id);
       setSelectedSeats(updatedSeats);
