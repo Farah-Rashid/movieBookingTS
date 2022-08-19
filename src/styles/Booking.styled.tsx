@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ButtonStyle } from "../components/Button.styled";
+import { ButtonStyle } from "../components/Button/Button.styled";
 export const BookingStyles = styled.article`
   display: flex;
   flex-direction: column;

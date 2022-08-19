@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
 import { Container } from "../styles/Container.styled";
 import { Cards } from "../styles/Cards.styled";
@@ -48,7 +47,6 @@ const HomePage = () => {
   return (
     <>
       <Container>
-        {" "}
         <h1>Book Tickets</h1>
         <form onSubmit={submit}>
           <input
