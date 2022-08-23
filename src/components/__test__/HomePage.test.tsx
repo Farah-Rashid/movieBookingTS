@@ -1,8 +1,9 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import HomePage from '../HomePage';
+import axios from 'axios'
+import { MemoryRouter } from 'react-router-dom'
 const getMovieData = require('./__mock__/index');
-const axios = require('axios');
-jest.mock('axios');
+
 const mockResponse = {
   data: {
     results: [
@@ -39,9 +40,12 @@ describe("testing homepage", () => {
     expect(container).toMatchSnapshot();
   })
 
-  test("testing input value", () => {
-    render(<HomePage />)
-    const inputValue = screen.getByPlaceholderText<HTMLInputElement>(/search/i)
+  test("testing input value", async () => {
+    jest.spyOn(axios, "get").mockResolvedValue(mockResponse)
+    render(<MemoryRouter><HomePage /></MemoryRouter>)
+    await screen.findByText(/dragon knight/i);
+    expect(screen.getByText(/jurassic/i)).toBeInTheDocument();
+    const inputValue = screen.getByPlaceholderText<HTMLInputElement>(/search/i);
     expect(inputValue).toBeInTheDocument()
     fireEvent.change(inputValue, { target: { value: "harry potter" } })
     expect(inputValue.value).toBe("harry potter");
