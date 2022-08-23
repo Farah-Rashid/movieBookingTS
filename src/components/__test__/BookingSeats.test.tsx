@@ -1,8 +1,14 @@
 import BookingSeats from '../BookingSeats';
 import { render, screen, fireEvent } from '@testing-library/react';
-import vector from "../../Assets/Vector 1.png";
+import vector from "../../Assets/Screen.png";
 
 describe("testing bookingSeat", () => {
+  beforeAll(() => {
+    global.alert = jest.fn();
+  });
+  afterAll(() => {
+    jest.clearAllMocks();
+  });
   test('should take a snapshot', () => {
     const { container } = render(<BookingSeats />)
     expect(container).toMatchSnapshot()

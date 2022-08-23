@@ -1,6 +1,6 @@
 import React from 'react'
 import { Empty } from '../styles/Empty.styles'
-import img from "../Assets/undraw.png"
+import img from "../Assets/EmptyState.png"
 
 const PageNotFound = () => {
   return (

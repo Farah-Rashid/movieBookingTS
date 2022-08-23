@@ -10,7 +10,7 @@ exports[`testing page not found should take a snapshot 1`] = `
     </h2>
     <img
       alt="no img found"
-      src="undraw.png"
+      src="EmptyState.png"
     />
   </article>
 </div>

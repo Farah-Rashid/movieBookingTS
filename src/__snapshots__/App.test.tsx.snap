@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`testing homepage should take a snapshot 1`] = `
+exports[`testing movie cards should take a snapshot 1`] = `
 <div>
   <header
     class="sc-hKMtZM kUfBkT"

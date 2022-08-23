@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import vector from "../Assets/Vector 1.png";
+import vector from "../Assets/Screen.png";
 import { useParams } from "react-router";
 import Modal from "./Modal";
 import { data } from '../GlobalConstants'

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import searchIcon from "../Assets/Vector.png";
+import searchIcon from "../Assets/SearchIcon.png";
 
-export const Container =styled.header`
+export const Container = styled.header`
 display: flex;
 flex-direction: column;
 align-items: center;
