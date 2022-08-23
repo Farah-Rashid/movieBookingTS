@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing page not found should take a snapshot 1`] = `
+<div>
+  <article
+    class="sc-bczRLJ igZeIq"
+  >
+    <h2>
+      Sorry, there is no result for keyword you searched.
+    </h2>
+    <img
+      alt="no img found"
+      src="undraw.png"
+    />
+  </article>
+</div>
+`;

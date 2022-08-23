@@ -64,7 +64,7 @@ const BookingSeats = () => {
           <tr>
             <th> </th>
             {data.seats.map((seatno) => (
-              <th key={seatno}>{seatno}</th>
+              <th data-testid="seatNum" key={seatno}>{seatno}</th>
             ))}
           </tr>
         </thead>

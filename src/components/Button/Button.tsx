@@ -7,7 +7,7 @@ interface props {
 
 }
 const Button = (props: props) => {
-  return <ButtonStyle onClick={props.onClick}>{props.children}</ButtonStyle>
+  return <ButtonStyle data-testid="buttonItem" onClick={props.onClick}>{props.children}</ButtonStyle>
 }
 
 export default Button;

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing homepage should take a snapshot 1`] = `
+<div>
+  <header
+    class="sc-hKMtZM cgCEkr"
+  >
+    <h1>
+      Book Tickets
+    </h1>
+    <form>
+      <input
+        placeholder="search"
+        type="text"
+        value=""
+      />
+    </form>
+  </header>
+  <article
+    class="sc-jSMfEi gciWvL"
+  >
+    <h2>
+      Sorry, there is no result for keyword you searched.
+    </h2>
+    <img
+      alt="no img found"
+      src="undraw.png"
+    />
+  </article>
+</div>
+`;

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing movie cards should take a snapshot 1`] = `
+<div>
+  <article
+    class="sc-dkzDqf bjFjAH"
+  >
+    <article
+      class="sc-gsnTZi jzTshG"
+    >
+      <h3>
+        Jurassic World Dominion
+      </h3>
+      <img
+        alt="Jurassic World Dominion"
+        src="https://image.tmdb.org/t/p/w500//kAVRgw7GgK1CfYEJq8ME6EvRIgU.jpg"
+      />
+      <a
+        class=""
+        href="/book/507086/Jurassic World Dominion"
+      >
+        <button
+          class="sc-bczRLJ hhvoiM"
+          data-testid="buttonItem"
+        >
+          Book now
+        </button>
+      </a>
+    </article>
+  </article>
+</div>
+`;

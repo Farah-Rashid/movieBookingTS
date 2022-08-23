@@ -34,7 +34,7 @@ const Modal = ({ selectedSeats, setModalVisible, setSelectedSeats }: Props) => {
   return (
     <ModalScreen>
       <ModalStyle>
-        <CloseButton onClick={modalClose} src={close} alt="close" />
+        <CloseButton data-testid="closeButton" onClick={modalClose} src={close} alt="close" />
         <ModalH1>Thank you for booking</ModalH1>
         <ModalH3>Order Summary</ModalH3>
         < ModalDiv>

@@ -7,7 +7,7 @@ type Props = {
 
 const SeatIcon = ({ colorName, onClick }: Props) => {
   return (
-    <svg onClick={onClick} width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg data-testid="svg" onClick={onClick} width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="29.5" y="12.5" width="41" height="41" fill={colorName} stroke="white" />
       <mask id="path-2-inside-1_324_100" fill="white">
         <path fillRule="evenodd" clipRule="evenodd" d="M28 26H6V71H94V26H72V55H28V26Z" />

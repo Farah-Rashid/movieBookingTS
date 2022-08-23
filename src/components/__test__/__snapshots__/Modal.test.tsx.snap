@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal test should take a snapshot 1`] = `
+<div>
+  <article
+    class="sc-ksZaOG bJBVYL"
+  >
+    <article
+      class="sc-jSMfEi bmWsQR"
+    >
+      <img
+        alt="close"
+        class="sc-gKXOVf cYuPVG"
+        data-testid="closeButton"
+        src="Xclose.png"
+      />
+      <h1
+        class="sc-ftvSup habaGD"
+      >
+        Thank you for booking
+      </h1>
+      <h3
+        class="sc-papXJ htdLFC"
+      >
+        Order Summary
+      </h3>
+      <article
+        class="sc-crXcEl fEfpzX"
+      >
+        <img
+          alt="movie"
+          class="sc-iBkjds liIVTu"
+          src="https://image.tmdb.org/t/p/w500/null"
+        />
+        <article>
+          <h3
+            class="sc-hAZoDl hqlHun"
+          >
+            Seats:
+          </h3>
+          <article
+            class="sc-evZas dNqGqz"
+          >
+            <h1
+              class="sc-breuTD hAhIDx"
+            >
+              A1,B1,C1,D1,A2,B2,C3
+            </h1>
+          </article>
+          <article
+            class="sc-iqcoie dLFwIy"
+          >
+            <article>
+              <h5
+                class="sc-jqUVSM cmsqhK"
+              >
+                7
+                *250
+              </h5>
+              <br />
+              <small
+                class="sc-kDDrLX dtSAIy"
+              >
+                CGST(12%)
+              </small>
+              <br />
+              <small
+                class="sc-kDDrLX dtSAIy"
+              >
+                SGST(12%)
+              </small>
+            </article>
+            <article>
+              <h5
+                class="sc-jqUVSM cmsqhK"
+              >
+                1750
+              </h5>
+              <br />
+              <small
+                class="sc-kDDrLX dtSAIy"
+              >
+                210
+              </small>
+              <br />
+              <small
+                class="sc-kDDrLX dtSAIy"
+              >
+                210
+              </small>
+            </article>
+          </article>
+          <hr />
+          <article
+            class="sc-iqcoie dLFwIy"
+          >
+            <h5
+              class="sc-jqUVSM cmsqhK"
+            >
+              Total
+            </h5>
+            <h5
+              class="sc-jqUVSM cmsqhK"
+            >
+              2170
+            </h5>
+          </article>
+        </article>
+      </article>
+    </article>
+  </article>
+</div>
+`;
